@@ -2,7 +2,8 @@ import { SEED_ROWS } from './seed'
 import type { EntryRow } from './types'
 
 // 本地持久化：数据放在 localStorage 里，刷新、关掉再打开都还在。
-const STORAGE_KEY = 'waste-to-energy-plant:entries'
+// 计量批量核收上线后旧占位数据（毛重是文字、净重无法计算）需要重播种，键版本升到 v2。
+const STORAGE_KEY = 'waste-to-energy-plant:entries:v2'
 
 function clone<T>(value: T): T {
   return JSON.parse(JSON.stringify(value)) as T

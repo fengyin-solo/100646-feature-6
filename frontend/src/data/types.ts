@@ -32,6 +32,27 @@ export type ActionResult = {
   message: string
 }
 
+// 批量核收逐条结果：被拦的单子要带着拦截原因留在待过磅，不能被整批吞掉。
+export type BatchAcceptOutcome = 'accepted' | 'blocked'
+
+export type BatchAcceptItem = {
+  id: number
+  outcome: BatchAcceptOutcome
+  ticketNo: string
+  plate: string
+  source: string
+  weighTime: string
+  gross: number
+  tare: number
+  net: number
+  reason: string
+}
+
+export type BatchAcceptResult = {
+  accepted: BatchAcceptItem[]
+  blocked: BatchAcceptItem[]
+}
+
 export type OverviewResult = {
   cards: { label: string; value: number }[]
   modules: { name: string; created: number; pending: number; abnormal: number }[]

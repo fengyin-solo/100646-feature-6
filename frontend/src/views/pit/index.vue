@@ -3,7 +3,7 @@
     <header class="page-head">
       <div>
         <h2>垃圾池管理管理</h2>
-        <p class="page-desc">维护垃圾池区，围绕池区编号、垃圾存量、发酵天数、渗滤液液位做登记、筛选与状态流转。</p>
+        <p class="page-desc">维护垃圾池区，围绕池区编号、垃圾存量、发酵天数、渗滤液液位做登记、筛选与状态流转。待投料队列由进厂计量复核动作驱动，按过磅时间先后自动重排。</p>
       </div>
       <div class="page-actions">
         <button class="btn primary" type="button" @click="openCreate">登记垃圾池区</button>
